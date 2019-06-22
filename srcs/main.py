@@ -1,12 +1,16 @@
 from grid import *
 import os
-import graphics as g
+# import graphics as g
 
 if __name__ == "__main__":
     gridu = Grid()
-    graphics = g.Graphics()
-    print("Hi i'm pAIkumanuCH, here is a grid")
+    # graphics = g.Graphics()
+    print("Hi i'm pAIkumanuCH, here is the team : ")
 
-    while True:
-        # gridu.GETTHEFUCKOUTOFMYROOMIMPLAYING_PACU("LEFT")
-        graphics._draw_this_shit(gridu.grid_)
+    print(gridu.pacu)
+    print(gridu.ghostu)
+    print()
+    print("And the grid :")
+    print(gridu)
+
+    gridu.update()
