@@ -1,14 +1,13 @@
-P = 1  # PACU
-G = 2  # GHOSTU
-C = 3  # CANDYforPACU
-W = 4  # WALLU
+# PACU = P
+# GHOSTU = G
+# CANDYforPACU = C
+# WALLU = W
 
 
 class Grid:
-
-    def __init__(self):
+    def __init__(self, pathToGrid='./gridT.txt'):
         self.grid_ = []
-        with open('./gridT.txt') as g:
+        with open(pathToGrid) as g:
             for i in g.readlines():
                 self.grid_.append(i)
 
