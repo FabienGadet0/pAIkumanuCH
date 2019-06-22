@@ -1,11 +1,14 @@
+import random
+
+
 class Trucquibouge():
     def __init__(self, pos=[0, 0], name="truc random"):
         self.pos = pos
         self.GODHEDEAD = False  # ?
         self.name = name
 
-    def update(self):
-        pass
+    def think(self):
+        return random.choice(['UP', 'DOWN', 'LEFT', 'RIGHT'])
 
     def RESTINPACURONNI(self):
         self.GODHEDEAD = True

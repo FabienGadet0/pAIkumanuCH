@@ -53,11 +53,11 @@ class Grid:
         self.grid_[self.pacu.pos[1]][self.pacu.pos[0]] = 'P'
 
   # ? GHOSTU UPDATE FUNCTION
-    def GETTHEFUCKOUTOFMYROOMIMPLAYING_GHOSTU(self, g,  dir):
+    def GETTHEFUCKOUTOFMYROOMIMPLAYING_GHOSTU(self, dir):
         for g in self.ghostu:
             thingsaround = [self.grid_[g.pos[1] - 1][g.pos[0]],
                             self.grid_[g.pos[1] + 1][g.pos[0]], self.grid_[g.pos[1]][g.pos[0] + 1], self.grid_[g.pos[1]][g.pos[0] - 1]]
-            g.move(dir, thingsaround)
+            g.move(g.think(), thingsaround)
             self.remove_this_trash_pacu_or_ghostu(g.name[0])
             self.grid_[g.pos[1]][g.pos[0]] = g.name[0]
 
