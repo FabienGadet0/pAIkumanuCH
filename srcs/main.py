@@ -15,7 +15,7 @@ if __name__ == "__main__":
     print(gridu)
     clock = pygame.time.Clock()
     while 1:
-        clock.tick(3)
+        clock.tick(5)
         key = graphics.get_last_key()
         gridu.update(key)
         graphics.draw_this_shit(gridu.grid_)

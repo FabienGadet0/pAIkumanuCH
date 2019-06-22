@@ -5,7 +5,7 @@ class Trucquibouge():
         self.name = name
 
     def update(self):
-        self.move("DOWN")
+        pass
 
     def RESTINPACURONNI(self):
         self.GODHEDEAD = True

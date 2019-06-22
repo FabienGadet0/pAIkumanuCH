@@ -57,7 +57,7 @@ class Graphics:
             return (255, 255, 0)
         elif code == "W":
             return (66, 78, 244)
-        elif code == "Y" or code == "U" or code == "Z" or code == "X":
+        elif code == "Y" or code == "U" or code == "Z" or code == "I":
             return (255, 255, 255)
         elif code == "C":
             return (249, 168, 4)
