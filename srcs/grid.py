@@ -28,19 +28,19 @@ class Grid:
                 self.grid_.append(i.split())
         self.pacu = Pacu(index_2d(self.grid_, "P"))
         self.ghostu = []
-        self.ghostu.append(Ghostu(index_2d(self.grid_, "U"), "UUUUU"))
-        self.ghostu.append(Ghostu(index_2d(self.grid_, "X"), "IXU"))
-        self.ghostu.append(Ghostu(index_2d(self.grid_, "Y"), "YGREKU"))
-        self.ghostu.append(Ghostu(index_2d(self.grid_, "Z"), "ZEDU"))
+        self.ghostu.append(UUUU(index_2d(self.grid_, "U")))
+        self.ghostu.append(IXU(index_2d(self.grid_, "X")))
+        self.ghostu.append(YGREKU(index_2d(self.grid_, "Y")))
+        self.ghostu.append(ZEDU(index_2d(self.grid_, "Z")))
 
     def remove_this_trash_pacu(self):
         pacu_current_pos = index_2d(self.grid_, "P")
         self.grid_[pacu_current_pos[1]][pacu_current_pos[0]] = 'V'
 
-    def update(self):
+    def update(self, direction):
         for g in self.ghostu:
             g.update()
-        self.GETTHEFUCKOUTOFMYROOMIMPLAYING_PACU("DOWN")
+        self.GETTHEFUCKOUTOFMYROOMIMPLAYING_PACU(direction)
 
     # ? PACU UPDATE FUNCTION
     def GETTHEFUCKOUTOFMYROOMIMPLAYING_PACU(self, dir):
