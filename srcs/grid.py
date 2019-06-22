@@ -5,7 +5,6 @@ class Grid:
 
     def __init__(self):
         P = 1  # PACU
-        V = 0  # VOID
         G = 2  # GHOSTU
         C = 3  # CANDYforPACU
         W = 4  # WALLU

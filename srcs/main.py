@@ -1,2 +1,6 @@
+from grid import *
+
 if __name__ == "__main__":
-    print("Hi i'm pAIkumanuCH")
+    gridu = Grid()
+    print("Hi i'm pAIkumanuCH, here is a grid")
+    print(gridu)
