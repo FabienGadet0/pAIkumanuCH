@@ -1,5 +1,9 @@
 from pacu import *
-from ghostu import *
+from GHOSTU.ghostu import *
+from GHOSTU.ZEDU import ZEDU
+from GHOSTU.YGREKU import YGREKU
+from GHOSTU.IXU import IXU
+from GHOSTU.UUUU import UUUU
 
 # PACU = P
 # CANDYforPACU = C
@@ -39,21 +43,18 @@ class Grid:
 
     def update(self, direction):
         for g in self.ghostu:
-            g.update()
-        self.GETTHEFUCKOUTOFMYROOMIMPLAYING_PACU(direction)
-        self.GETTHEFUCKOUTOFMYROOMIMPLAYING_GHOSTU("UP")
+            g.update(self.grid_)
+        self.pacu.update(self.grid_, direction=direction)
+        self.clean_pacu()
+        self.clean_ghostu()
 
     # ? PACU UPDATE FUNCTION
-    def GETTHEFUCKOUTOFMYROOMIMPLAYING_PACU(self, dir):
-        thingsaround = [self.grid_[self.pacu.pos[1] - 1][self.pacu.pos[0]],
-                        self.grid_[self.pacu.pos[1] + 1][self.pacu.pos[0]], self.grid_[self.pacu.pos[1]][self.pacu.pos[0] + 1], self.grid_[self.pacu.pos[1]][self.pacu.pos[0] - 1]]
-        self.pacu.move(dir, thingsaround)
-        self.ghostu[1].move(dir, thingsaround)
+    def clean_pacu(self, ):
         self.remove_this_trash_pacu_or_ghostu('P')
         self.grid_[self.pacu.pos[1]][self.pacu.pos[0]] = 'P'
 
   # ? GHOSTU UPDATE FUNCTION
-    def GETTHEFUCKOUTOFMYROOMIMPLAYING_GHOSTU(self, dir):
+    def clean_ghostu(self):
         for g in self.ghostu:
             thingsaround = [self.grid_[g.pos[1] - 1][g.pos[0]],
                             self.grid_[g.pos[1] + 1][g.pos[0]], self.grid_[g.pos[1]][g.pos[0] + 1], self.grid_[g.pos[1]][g.pos[0] - 1]]

@@ -1,6 +1,6 @@
-from trucquibouge import Trucquibouge
+from GHOSTU.ghostu import *
 
 
-class YGREKU(Trucquibouge):
+class YGREKU(Ghostu):
     def __init__(self, pos=[0, 0], name='YGREKU'):
         super().__init__(pos, name)

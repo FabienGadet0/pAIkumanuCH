@@ -10,9 +10,6 @@ if __name__ == "__main__":
 
     print(gridu.pacu)
     print(gridu.ghostu)
-    print()
-    print("And the grid :")
-    print(gridu)
     clock = pygame.time.Clock()
     while 1:
         clock.tick(5)

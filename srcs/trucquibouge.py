@@ -1,14 +1,16 @@
 import random
 
 
+def get_things_around(center, grid):
+    return [grid[center[1] - 1][center[0]],
+            grid[center[1] + 1][center[0]], grid[center[1]][center[0] + 1], grid[center[1]][center[0] - 1]]
+
+
 class Trucquibouge():
     def __init__(self, pos=[0, 0], name="truc random"):
         self.pos = pos
         self.GODHEDEAD = False  # ?
         self.name = name
-
-    def think(self):
-        return random.choice(['UP', 'DOWN', 'LEFT', 'RIGHT'])
 
     def RESTINPACURONNI(self):
         self.GODHEDEAD = True
@@ -42,8 +44,8 @@ class Trucquibouge():
             print("OH MY GOD : {}".format(self.pos))
         return self.pos
 
-    def update(self):
-        print("Update {}".format(self.name))
+    def update(self, grid, direction="NONE"):
+        self.move(direction, get_things_around(self.pos, grid))
 
     def __str__(self):
         return "I'm {} {}, AM I DEAD : {}".format(self.name, self.pos, self.GODHEDEAD)
