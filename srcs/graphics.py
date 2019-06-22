@@ -4,12 +4,15 @@ WINDOW_NAME = "Fenetre de ses morts"
 WINDOW_HEIGHT = 480
 WINDOW_WIDTH = 480
 
-Class Graphics:
+
+class Graphics:
 
     def __init__(self):
         # Initialize Everything
         pygame.init()
         self.screen = pygame.display.set_mode((WINDOW_WIDTH, WINDOW_HEIGHT))
+        self.cellx = 0
+        self.celly = 0
         pygame.display.set_caption(WINDOW_NAME)
         pygame.mouse.set_visible(0)
 
@@ -23,16 +26,16 @@ Class Graphics:
         # Handle Input Events
         keys = pygame.key.get_pressed()
         for event in pygame.event.get():
-            if event.type == QUIT:
+            if event.type == pygame.QUIT:
                 pygame.quit()
                 sys.exit()
-            elif event.type == KEY_LEFT:
+            elif event.type == pygame.KEY_LEFT:
                 self.lastKeyPressed = "LEFT"
-            elif event.type == KEY_RIGHT:
+            elif event.type == pygame.KEY_RIGHT:
                 self.lastKeyPressed = "RIGHT"
-            elif event.type == KEY_DOWN:
+            elif event.type == pygame.KEY_DOWN:
                 self.lastKeyPressed = "DOWN"
-            elif event.type == KEY_UP:
+            elif event.type == pygame.KEY_UP:
                 self.lastKeyPressed = "UP"
 
     def _get_last_key(self):
@@ -40,7 +43,7 @@ Class Graphics:
 
     def _draw_this_shit(self, grid):
         # Draw Everything
-        screen.fill((0, 0, 0), rect=None, special_flags=0)
+        self.screen.fill((0, 0, 0), rect=None, special_flags=0)
 
         for row in grid:
             currenty = 0
@@ -48,7 +51,7 @@ Class Graphics:
                 currentx = 0
                 pygame.draw.rect(
                     self.screen, self._get_gud_color(cell),
-                    (currentx, currenty, self.cellx, self.celly), width=0)
+                    (currentx, currenty, self.cellx, self.celly))
                 currentx += self.cellx
             currenty += self.celly
         pygame.display.update()
