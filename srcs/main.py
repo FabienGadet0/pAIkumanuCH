@@ -1,2 +1,2 @@
 if __name__ == "__main__":
-    print("Hi i'm PaiKumanuch")
+    print("Hi i'm pAIkumanuCH")
