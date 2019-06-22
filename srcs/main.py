@@ -1,10 +1,10 @@
 from grid import *
 import os
-# import graphics as g
+import graphics as g
 
 if __name__ == "__main__":
     gridu = Grid()
-    # graphics = g.Graphics()
+    graphics = g.Graphics()
     print("Hi i'm pAIkumanuCH, here is the team : ")
 
     print(gridu.pacu)
@@ -12,5 +12,6 @@ if __name__ == "__main__":
     print()
     print("And the grid :")
     print(gridu)
-
-    gridu.update()
+    while 1:
+        graphics.draw_this_shit(gridu.grid_)
+        gridu.update()

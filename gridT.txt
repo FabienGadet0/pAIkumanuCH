@@ -7,6 +7,6 @@ W C C C C C C W C C C C C C C W C W W
 W C C C C C Z W C C C C C C C W C W W
 W C C C C C C V C C C C C C C W C W W
 W C C C C C C V C C C C C C C C C W W
-W C C C C C C W C P C C C C C C C W W
+W C C C C C C W C C C C C C C C C W W
 W C C C C C C W C C C C C C C C C W W
 W W W W W W W W W W W W W W W W W W W
