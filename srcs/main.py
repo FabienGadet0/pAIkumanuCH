@@ -1,6 +1,7 @@
 from grid import *
 import os
 import graphics as g
+import pygame
 
 if __name__ == "__main__":
     gridu = Grid()
@@ -12,6 +13,9 @@ if __name__ == "__main__":
     print()
     print("And the grid :")
     print(gridu)
+    clock = pygame.time.Clock()
     while 1:
+        clock.tick(3)
         graphics.draw_this_shit(gridu.grid_)
         gridu.update()
+        key = graphics.get_last_key()

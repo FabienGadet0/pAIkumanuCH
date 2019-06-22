@@ -1,6 +1,7 @@
 import pygame
+from pygame.locals import *
 
-WINDOW_NAME = "Fenetre de ses morts"
+WINDOW_NAME = "pAIkumanuCH"
 WINDOW_HEIGHT = 1000
 WINDOW_WIDTH = 1000
 
@@ -13,30 +14,24 @@ class Graphics:
         self.screen = pygame.display.set_mode((WINDOW_WIDTH, WINDOW_HEIGHT))
         self.cellx = 0
         self.celly = 0
+        self.lastKeyPressed = ""
         pygame.display.set_caption(WINDOW_NAME)
         pygame.mouse.set_visible(0)
 
-    def update(self, grid):
-        """this function is called at every loop and
-        redraws according to the grid"""
-        # Draw everything
-        self._draw_this_shit(grid)
+    def get_last_key(self):
         # Handle Input Events
-        keys = pygame.key.get_pressed()
         for event in pygame.event.get():
-            if event.type == pygame.QUIT:
+            if event.type == QUIT:
                 pygame.quit()
                 sys.exit()
-            elif event.type == pygame.KEY_LEFT:
+            elif event.type == KEYDOWN and event.key == K_LEFT:
                 self.lastKeyPressed = "LEFT"
-            elif event.type == pygame.KEY_RIGHT:
+            elif event.type == KEYDOWN and event.key == K_RIGHT:
                 self.lastKeyPressed = "RIGHT"
-            elif event.type == pygame.KEY_DOWN:
+            elif event.type == KEYDOWN and event.key == K_DOWN:
                 self.lastKeyPressed = "DOWN"
-            elif event.type == pygame.KEY_UP:
+            elif event.type == KEYDOWN and event.key == K_UP:
                 self.lastKeyPressed = "UP"
-
-    def get_last_key(self):
         return self.lastKeyPressed
 
     def draw_this_shit(self, grid):
@@ -53,13 +48,9 @@ class Graphics:
                     self.screen, color,
                     (currentx, currenty, self.cellx, self.celly))
                 currentx += self.cellx
-                print(color)
-                print(currentx)
-                print(currenty)
-
             currenty += self.celly
             currentx = 0
-        pygame.display.update()
+        pygame.display.flip()
 
     def _get_gud_color(self, code):
         if code == "P":
