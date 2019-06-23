@@ -1,7 +1,7 @@
 import random
 
 
-def get_things_around(center, grid):
+def get_things_around(center, grid, name=""):
     return [grid[center[1] - 1][center[0]],
             grid[center[1] + 1][center[0]], grid[center[1]][center[0] + 1], grid[center[1]][center[0] - 1]]
 
@@ -54,7 +54,7 @@ class Trucquibouge():
         return self.pos
 
     def update(self, grid, direction="NONE"):
-        return self.move(direction, get_things_around(self.pos, grid))
+        return self.move(direction, get_things_around(self.pos, grid, name=self.name))
 
     def __str__(self):
         return "I'm {} {}, AM I DEAD : {}".format(self.name, self.pos, self.GODHEDEAD)

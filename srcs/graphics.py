@@ -2,8 +2,8 @@ import pygame
 from pygame.locals import *
 
 WINDOW_NAME = "pAIkumanuCH"
-WINDOW_HEIGHT = 1000
-WINDOW_WIDTH = 1000
+WINDOW_HEIGHT = 500
+WINDOW_WIDTH = 500
 
 
 class Graphics:

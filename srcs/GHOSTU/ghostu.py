@@ -11,4 +11,5 @@ class Ghostu(Trucquibouge):
         return random.choice(['UP', 'DOWN', 'LEFT', 'RIGHT'])
 
     def update(self, grid):
-        self.move(self.think(), get_things_around(self.pos, grid))
+        self.move(self.think(), get_things_around(
+            self.pos, grid, name=self.name))

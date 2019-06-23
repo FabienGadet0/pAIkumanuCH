@@ -13,7 +13,7 @@ from GHOSTU.UUUU import UUUU
 
 # GHOSTU [] :
 # UUUUU = U
-# IXU = X
+# IXU = I
 # YGREKU = Y
 # ZEDU = Z
 
