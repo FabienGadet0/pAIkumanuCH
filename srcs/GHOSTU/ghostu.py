@@ -9,7 +9,6 @@ class Ghostu(Trucquibouge):
         return super().__init__(*args, **kwargs)
 
     def think(self):
-        return 'NONE'
         return random.choice(['UP', 'DOWN', 'LEFT', 'RIGHT'])
 
     def update(self, grid):
