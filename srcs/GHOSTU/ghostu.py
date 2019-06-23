@@ -2,21 +2,30 @@ from trucquibouge import Trucquibouge, get_things_around
 import random
 
 
+def index_2d(myList, v):
+    for i, x in enumerate(myList):
+        if v in x:
+            return [x.index(v), i]
+
+
 class Ghostu(Trucquibouge):
 
     def __init__(self, *args, **kwargs):
         self.is_weak = False
         return super().__init__(*args, **kwargs)
 
-    def think(self):
+    def where_is_this_fucking_pacu(self, grid):
+        return index_2d(grid, '0')
+
+    def think(self, grid):
         return random.choice(['UP', 'DOWN', 'LEFT', 'RIGHT'])
 
     def update(self, grid):
         self.move(get_things_around(
-            self.pos, grid, name=self.name))
+            self.pos, grid, self.name), grid)
 
-    def move(self, thingsaround):
-        direction = self.think()
+    def move(self, thingsaround, grid):
+        direction = self.think(grid)
         dir = {'UP': self.up,
                'DOWN': self.down,
                'RIGHT': self.right,
