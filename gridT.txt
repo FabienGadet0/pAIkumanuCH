@@ -5,13 +5,13 @@ W C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C W
 W C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C W
 W C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C W
 W C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C W
-W C C C C C C C C C C I C Y C C C Z C C C C C C C C C C C C C C W
+W C C C C C C C C C C 1 C 3 C C C 4 C C C C C C C C C C C C C C W
 W C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C W
 W C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C W
 W C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C W
 W C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C W
-W C C C C C C C C C C C C C C U C C C C C C C C C C C C C C C C W
-W C C C C C C C C C C C C C C C C C C C P C C C C C C C C C C C W
+W C C C C C C C C C C C C C C 2 C C C C C C C C C C C C C C C C W
+W C C C C C C C C C C C C C C C C C C C 0 C C C C C C C C C C C W
 W C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C C W
 W W W W W W W W W W W W W W W W W W C C C C C C C C C C C C C C W
 W C C C C C C C C C C C C C C C C W C C C C C C C C C C C C C C W

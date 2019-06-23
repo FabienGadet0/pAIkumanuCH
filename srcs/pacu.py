@@ -1,6 +1,27 @@
-from trucquibouge import Trucquibouge
+from trucquibouge import Trucquibouge, GHOSTU
 
 
 class Pacu(Trucquibouge):
-    def __init__(self, pos=[0, 0]):
-        super().__init__(pos, 'Pacu')
+    def __init__(self, pos=[0, 0], letter='0'):
+        super().__init__(pos, 'Pacu', letter=letter)
+
+# ? return cell content if collid otherwise return ''
+    def move(self, thingsaround, direction):
+        dir = {'UP': self.up,
+               'DOWN': self.down,
+               'RIGHT': self.right,
+               'LEFT': self.left}
+        if (direction == 'UP' and (thingsaround[0] in 'CV') or
+            (direction == 'DOWN' and (thingsaround[1] in 'CV')) or
+            (direction == 'RIGHT' and (thingsaround[2] in 'CV')) or
+                (direction == 'LEFT' and (thingsaround[3] in 'CV'))):
+            dir[direction]()
+        elif (direction == 'UP' and (thingsaround[0] in GHOSTU)):
+            return thingsaround[0]
+        elif (direction == 'DOWN' and (thingsaround[1] in GHOSTU)):
+            return thingsaround[1]
+        elif (direction == 'UP' and (thingsaround[2] in GHOSTU)):
+            return thingsaround[2]
+        elif (direction == 'UP' and (thingsaround[3] in GHOSTU)):
+            return thingsaround[3]
+        return ''

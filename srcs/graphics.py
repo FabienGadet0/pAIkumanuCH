@@ -53,11 +53,11 @@ class Graphics:
         pygame.display.flip()
 
     def _get_gud_color(self, code):
-        if code == "P":
+        if code == "0":
             return (255, 255, 0)
         elif code == "W":
             return (66, 78, 244)
-        elif code == "Y" or code == "U" or code == "Z" or code == "I":
+        elif code in '12345678':
             return (255, 255, 255)
         elif code == "C":
             return (249, 168, 4)
@@ -65,3 +65,5 @@ class Graphics:
             return (138, 25, 214)
         elif code == "V":
             return (0, 0, 0)
+        else:
+            return (255, 0, 255, 0)
