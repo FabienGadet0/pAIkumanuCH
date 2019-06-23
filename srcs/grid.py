@@ -42,25 +42,25 @@ class Grid:
         self.grid_[pacu_current_pos[1]][pacu_current_pos[0]] = 'V'
 
     def update(self, direction):
-        for g in self.ghostu:
-            g.update(self.grid_)
         self.pacu.update(self.grid_, direction=direction)
         self.clean_pacu()
-        self.clean_ghostu()
+        for g in self.ghostu:
+            g.update(self.grid_)
+            self.clean_ghostu(g)
+        return any(x.GODHEDEAD for x in self.ghostu)
 
-    # ? PACU UPDATE FUNCTION
-    def clean_pacu(self, ):
+    # ? CLEAN PACU IN THE GRID
+    def clean_pacu(self):
         self.remove_this_trash_pacu_or_ghostu('P')
         self.grid_[self.pacu.pos[1]][self.pacu.pos[0]] = 'P'
 
-  # ? GHOSTU UPDATE FUNCTION
-    def clean_ghostu(self):
-        for g in self.ghostu:
-            thingsaround = [self.grid_[g.pos[1] - 1][g.pos[0]],
-                            self.grid_[g.pos[1] + 1][g.pos[0]], self.grid_[g.pos[1]][g.pos[0] + 1], self.grid_[g.pos[1]][g.pos[0] - 1]]
-            g.move(g.think(), thingsaround)
-            self.remove_this_trash_pacu_or_ghostu(g.name[0])
-            self.grid_[g.pos[1]][g.pos[0]] = g.name[0]
+  # ? CLEAN GHOSTU IN THE GRID
+    def clean_ghostu(self, g):
+        thingsaround = [self.grid_[g.pos[1] - 1][g.pos[0]],
+                        self.grid_[g.pos[1] + 1][g.pos[0]], self.grid_[g.pos[1]][g.pos[0] + 1], self.grid_[g.pos[1]][g.pos[0] - 1]]
+        g.move(g.think(), thingsaround)
+        self.remove_this_trash_pacu_or_ghostu(g.name[0])
+        self.grid_[g.pos[1]][g.pos[0]] = g.name[0]
 
     def __str__(self):
         return ('\n'.join([' '.join([str(cell) for cell in row]) for row in self.grid_]))

@@ -18,6 +18,9 @@ class Trucquibouge():
     def COMEBACKHOLYPACU(self):
         self.GODHEDEAD = False
 
+    def am_i_in_pacuroni(self):
+        return self.GODHEDEAD
+
     def up(self):
         self.pos[1] -= 1
 
@@ -35,17 +38,23 @@ class Trucquibouge():
                'DOWN': self.down,
                'RIGHT': self.right,
                'LEFT': self.left}
-        if (direction == 'UP' and not (thingsaround[0] == 'W' or thingsaround[0] == 'G')) or \
-            (direction == 'DOWN' and not (thingsaround[1] == 'W' or thingsaround[1] == 'G')) or \
-            (direction == 'RIGHT' and not (thingsaround[2] == 'W' or thingsaround[2] == 'G')) or \
-                (direction == 'LEFT' and not (thingsaround[3] == 'W' or thingsaround[3] == 'G')):
+        if (direction == 'UP' and (thingsaround[0] == 'C' or thingsaround[0] == 'V')) or \
+            (direction == 'DOWN' and (thingsaround[1] == 'C' or thingsaround[1] == 'V')) or \
+            (direction == 'RIGHT' and (thingsaround[2] == 'C' or thingsaround[2] == 'V')) or \
+                (direction == 'LEFT' and (thingsaround[3] == 'C' or thingsaround[3] == 'V')):
             dir[direction]()
-        else:
-            print("OH MY GOD : {}".format(self.pos))
+        elif (direction == 'UP' and (thingsaround[0] == 'P') or
+              (direction == 'DOWN' and (thingsaround[1] == 'P')) or
+              (direction == 'RIGHT' and (thingsaround[2] == 'P')) or
+                (direction == 'LEFT' and (thingsaround[3] == 'P'))):
+            self.RESTINPACURONNI()
+            print("ITS A PACURONI {}".format(self.GODHEDEAD))
+        # else:
+        #     print("OH MY GOD : {}".format(self.pos))
         return self.pos
 
     def update(self, grid, direction="NONE"):
-        self.move(direction, get_things_around(self.pos, grid))
+        return self.move(direction, get_things_around(self.pos, grid))
 
     def __str__(self):
         return "I'm {} {}, AM I DEAD : {}".format(self.name, self.pos, self.GODHEDEAD)

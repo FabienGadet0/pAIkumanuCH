@@ -8,11 +8,10 @@ if __name__ == "__main__":
     graphics = g.Graphics()
     print("Hi i'm pAIkumanuCH, here is the team : ")
 
-    print(gridu.pacu)
-    print(gridu.ghostu)
+    ending = False
     clock = pygame.time.Clock()
-    while 1:
+    while not ending:
         clock.tick(5)
         key = graphics.get_last_key()
-        gridu.update(key)
+        ending = gridu.update(key)
         graphics.draw_this_shit(gridu.grid_)
