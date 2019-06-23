@@ -44,8 +44,7 @@ class Grid:
         pacu_current_pos = index_2d(self.grid_, letter)
         self.grid_[pacu_current_pos[1]][pacu_current_pos[0]] = 'V'
 
-    def update(self, direction):
-        collid = self.pacu.update(self.grid_, direction=direction)
+    def handle_collid_for_pacu(self, collid):
         if collid != '':
             murderer = self.which_ghostu(collid)
             if murderer.is_weak:
@@ -55,9 +54,23 @@ class Grid:
                 self.pacu.die()
                 print('fucking pacu ur so bad')
 
+    def handle_collid_for_ghostu(self, collid, ghostu):
+        if collid != '':
+            if ghostu.is_weak:
+                ghostu.die()
+                print('Ghostu you are so shiet')
+            else:
+                self.pacu.die()
+                print('fucking pacu ur so bad')
+
+    def update(self, direction):
+        collid = self.pacu.update(self.grid_, direction=direction)
+        self.handle_collid_for_pacu(collid)
+
         self.CLEAN_THIS_TRASH_PACU()
         for g in self.ghostu:
-            g.update(self.grid_)
+            g_collid = g.update(self.grid_)
+            self.handle_collid_for_ghostu(g_collid, g)
             self.clean_ghostu(g)
         return self.pacu.is_dead
 
