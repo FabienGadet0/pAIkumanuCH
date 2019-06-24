@@ -1,18 +1,11 @@
 from trucquibouge import Trucquibouge, GHOSTU
-
-
-class braindead():
-    def __init__(self):
-        pass
-
-    def think(self, grid):
-        pass
+from braindead import Brain
 
 
 class Pacu(Trucquibouge):
     def __init__(self, pos=[0, 0], letter='0'):
         super().__init__(pos, 'Pacu', letter=letter)
-        self.brain = braindead()
+        self.brain = Brain()
 
 # ? return cell content if collid otherwise return ''
     def move(self, thingsaround, direction):

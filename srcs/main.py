@@ -1,7 +1,6 @@
 from grid import *
 import os
 import graphics as g
-import pygame
 
 if __name__ == "__main__":
     gridu = Grid()
