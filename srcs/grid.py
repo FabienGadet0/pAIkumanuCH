@@ -66,7 +66,6 @@ class Grid:
     def update(self, direction):
         collid = self.pacu.update(self.grid_, direction=direction)
         self.handle_collid_for_pacu(collid)
-
         self.CLEAN_THIS_TRASH_PACU()
         for g in self.ghostu:
             g_collid = g.update(self.grid_)
