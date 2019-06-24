@@ -1,10 +1,11 @@
-from grid import *
+import grid
 import os
-import graphics as g
+import graphics
+import pygame
 
 if __name__ == "__main__":
-    gridu = Grid()
-    graphics = g.Graphics()
+    gridu = grid.Grid()
+    graphics = graphics.Graphics()
     print("Hi i'm pAIkumanuCH, here is the team : ")
 
     ending = False

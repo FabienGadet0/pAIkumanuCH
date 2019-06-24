@@ -14,6 +14,7 @@ class Trucquibouge():
         self.is_dead = False  # ?
         self.name = name
         self.letter = letter
+        self.direction = "RIGHT"
 
     def die(self):
         self.is_dead = True
