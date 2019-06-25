@@ -2,8 +2,7 @@ import pygame
 from pygame.locals import *
 
 
-class Spritz(pygame.sprite.Sprite()):
-
+class Spritz(pygame.sprite.Sprite):
     def __init__(self, pos, direction, genre):
         super().__init__()
         self.sprite_pos = pos

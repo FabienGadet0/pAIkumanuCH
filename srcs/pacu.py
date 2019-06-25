@@ -18,7 +18,7 @@ class Pacu(Trucquibouge):
             (direction == 'RIGHT' and (thingsaround[2] in 'CV')) or
                 (direction == 'LEFT' and (thingsaround[3] in 'CV'))):
             dir[direction]()
-            self.direction = direction
+            self.set_direction(direction)
         elif (direction == 'UP' and (thingsaround[0] in GHOSTU)):
             return thingsaround[0]
         elif (direction == 'DOWN' and (thingsaround[1] in GHOSTU)):

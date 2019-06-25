@@ -9,7 +9,6 @@ def index_2d(myList, v):
 
 
 class Ghostu(Trucquibouge):
-
     def __init__(self, *args, **kwargs):
         self.is_weak = False
         self.direction = "NONE"
@@ -37,7 +36,7 @@ class Ghostu(Trucquibouge):
             (direction == 'RIGHT' and (thingsaround[2] in 'CV')) or
                 (direction == 'LEFT' and (thingsaround[3] in 'CV'))):
             dir[direction]()
-            self.direction = direction
+            self.set_direction(direction)
         elif (direction == 'UP' and (thingsaround[0] == '0')) or(direction == 'DOWN' and (thingsaround[1] == '0')) or (direction == 'UP' and (thingsaround[2] == '0')) or (direction == 'UP' and (thingsaround[3] == '0')):
             return '0'
         return ''

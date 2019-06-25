@@ -8,8 +8,8 @@ WINDOW_WIDTH = 500
 
 class Graphics:
 
+    # Initialize Everything
     def __init__(self):
-        # Initialize Everything
         pygame.init()
         self.screen = pygame.display.set_mode((WINDOW_WIDTH, WINDOW_HEIGHT))
         self.cellx = 0
@@ -18,8 +18,8 @@ class Graphics:
         pygame.display.set_caption(WINDOW_NAME)
         pygame.mouse.set_visible(0)
 
+    # Handle Input Events
     def get_last_key(self):
-        # Handle Input Events
         for event in pygame.event.get():
             if event.type == QUIT:
                 pygame.quit()
@@ -34,8 +34,8 @@ class Graphics:
                 self.lastKeyPressed = "UP"
         return self.lastKeyPressed
 
+    # Draw Everything
     def draw_this_shit(self, grid):
-        # Draw Everything
         self.cellx = WINDOW_WIDTH//len(grid[0])
         self.celly = WINDOW_HEIGHT//len(grid)
         self.screen.fill((0, 0, 0), rect=None, special_flags=0)
