@@ -37,6 +37,7 @@ class Ghostu(Trucquibouge):
                 (direction == 'LEFT' and (thingsaround[3] in 'CV'))):
             dir[direction]()
             self.set_direction(direction)
+            self.set_sprite_pos(self.pos)
         elif (direction == 'UP' and (thingsaround[0] == '0')) or(direction == 'DOWN' and (thingsaround[1] == '0')) or (direction == 'UP' and (thingsaround[2] == '0')) or (direction == 'UP' and (thingsaround[3] == '0')):
             return '0'
         return ''

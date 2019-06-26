@@ -36,10 +36,10 @@ class Graphics:
 
     # Draw Everything
     def draw_this_shit(self, gridu):
-        self._handle_sprites_from_gridu(gridu)
         grid = gridu.grid_
         self.cell = (WINDOW_WIDTH//len(grid[0]), WINDOW_HEIGHT//len(grid))
         self.screen.fill((0, 0, 0), rect=None, special_flags=0)
+        self._handle_sprites_from_gridu(gridu)
         currenty = 0
         currentx = 0
         for row in grid:
@@ -56,7 +56,7 @@ class Graphics:
 
     def _get_gud_color(self, code):
         if code == "0":
-            return (255, 255, 0)
+            return (0, 0, 0)
         elif code == "W":
             return (66, 78, 244)
         elif code in '12345678':
@@ -73,9 +73,12 @@ class Graphics:
     def _handle_sprites_from_gridu(self, gridu):
         self.sprites_list.empty()
         pacu = gridu.get_pacu()
-        pacu_rekt = pacu.image.get_rect()
-        pacu_rekt.x = 10
-        pacu_rekt.y = 10
+        pacu.update_animation()
+        pos = pacu.sprite_pos.copy()
+        pos[0] *= self.cell[0]
+        pos[1] *= self.cell[1]
+        rekt = pygame.Rect(pos, self.cell)
+        pacu.set_rect(rekt)
         self.sprites_list.add(pacu)
         # a decommenter quand on aura les sprites des ghostu
         # ghostu_list = gridu.get_ghostu()

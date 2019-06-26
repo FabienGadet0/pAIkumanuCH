@@ -19,6 +19,7 @@ class Pacu(Trucquibouge):
                 (direction == 'LEFT' and (thingsaround[3] in 'CV'))):
             dir[direction]()
             self.set_direction(direction)
+            self.set_sprite_pos(self.pos)
         elif (direction == 'UP' and (thingsaround[0] in GHOSTU)):
             return thingsaround[0]
         elif (direction == 'DOWN' and (thingsaround[1] in GHOSTU)):
