@@ -6,7 +6,7 @@ from GHOSTU.YGREKU import YGREKU
 from GHOSTU.IXU import IXU
 from GHOSTU.UUUU import UUUU
 
-# PACU = P
+# PACU = 0
 # CANDYforPACU = C
 # SUPER BONBON = S
 # VOID = V
@@ -84,6 +84,12 @@ class Grid:
                         self.grid_[g.pos[1] + 1][g.pos[0]], self.grid_[g.pos[1]][g.pos[0] + 1], self.grid_[g.pos[1]][g.pos[0] - 1]]
         self.remove_this_trash_pacu_or_ghostu(g.letter)
         self.grid_[g.pos[1]][g.pos[0]] = g.letter
+
+    def get_ghostu(self):
+        return self.ghostu
+
+    def get_pacu(self):
+        return self.pacu
 
     def __str__(self):
         return ('\n'.join([' '.join([str(cell) for cell in row]) for row in self.grid_]))

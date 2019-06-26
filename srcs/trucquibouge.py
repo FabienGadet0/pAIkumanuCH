@@ -9,14 +9,15 @@ def get_things_around(center, grid, name=""):
             grid[center[1] + 1][center[0]], grid[center[1]][center[0] + 1], grid[center[1]][center[0] - 1]]
 
 
-class Trucquibouge(Spritz):
+class Trucquibouge(spritz.Spritz):
     def __init__(self, pos=[0, 0], name="truc random", letter='E'):
         self.pos = pos
         self.is_dead = False  # ?
         self.name = name
         self.letter = letter
         self.direction = "RIGHT"
-        super().__init__(self.pos, self.direction, self.name)
+        super().__init__(self.pos, self.direction, "Pacu")
+        # super().__init__(self.pos, self.direction, self.name)
 
     def die(self):
         self.is_dead = True

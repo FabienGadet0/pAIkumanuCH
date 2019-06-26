@@ -7,10 +7,11 @@ class Spritz(pygame.sprite.Sprite):
         super().__init__()
         self.sprite_pos = pos
         self.direction = direction[0]
-        self.genre = genre
-        self.animation = 1
-        self.image = ""
-        self._assume_gender
+        self.genre = genre[0]
+        self.animation = "1"
+        file = "sprites/" + self.genre + self.direction + self.animation + ".png"
+        self.image = pygame.image.load(file).convert()
+        self.image.set_colorkey(pygame.Color(0, 0, 0))
 
     def set_sprite_pos(self, pos):
         self.sprite_pos = pos
@@ -19,14 +20,17 @@ class Spritz(pygame.sprite.Sprite):
         self.direction = direction[0]
 
     def update_animation():
-        if self.animation == 1:
-            self.animation = 2
-        if self.animation == 2:
-            self.animation = 1
+        if self.animation == "1":
+            self.animation = "2"
+        if self.animation == "2":
+            self.animation = "1"
         self._assume_gender()
 
+    def get_image():
+        return self.image
+
     def _assume_gender(self):
-        file = "sprites/" + self.genre + self.direction + self.animation
+        file = "sprites/" + self.genre + self.direction + self.animation + ".png"
         self.image = pygame.image.load(file).convert()
 
         # Set our transparent color
