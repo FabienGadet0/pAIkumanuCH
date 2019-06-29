@@ -3,6 +3,7 @@ import os
 import graphics
 import pygame
 
+FRAME_RATE = 200
 if __name__ == "__main__":
     graphics = graphics.Graphics()
     gridu = grid.Grid()
@@ -10,8 +11,12 @@ if __name__ == "__main__":
 
     ending = False
     clock = pygame.time.Clock()
+    milliseconds = clock.tick(FRAME_RATE)
     while not ending:
-        clock.tick(5)
+
         key = graphics.get_last_key()
-        ending = gridu.update(key)
+        if milliseconds > 150:
+            ending = gridu.update(key)
+            milliseconds = clock.tick(FRAME_RATE)
+        milliseconds += clock.tick(FRAME_RATE)
         graphics.draw_this_shit(gridu)
