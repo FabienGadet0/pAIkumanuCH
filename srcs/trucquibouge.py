@@ -2,6 +2,7 @@ import random
 import spritz
 
 GHOSTU = '1234'
+AI_TRIGGER = True
 
 
 def get_things_around(center, grid, name=""):

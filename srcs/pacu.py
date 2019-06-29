@@ -1,4 +1,4 @@
-from trucquibouge import Trucquibouge, GHOSTU
+from trucquibouge import Trucquibouge, GHOSTU, get_things_around
 from braindead import Brain
 
 
@@ -6,6 +6,11 @@ class Pacu(Trucquibouge):
     def __init__(self, pos=[0, 0], letter='0'):
         super().__init__(pos, 'Pacu', letter=letter)
         self.brain = Brain()
+
+    def update(self, grid, direction="NONE", AI=False):
+        if AI:
+            direction = self.brain.think(grid)
+        return self.move(get_things_around(self.pos, grid, name=self.name), direction)
 
 # ? return cell content if collid otherwise return ''
     def move(self, thingsaround, direction):

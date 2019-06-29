@@ -1,6 +1,6 @@
 from pacu import *
 from GHOSTU.ghostu import *
-from trucquibouge import GHOSTU
+from trucquibouge import GHOSTU, AI_TRIGGER
 from GHOSTU.ZEDU import ZEDU
 from GHOSTU.YGREKU import YGREKU
 from GHOSTU.IXU import IXU
@@ -35,7 +35,6 @@ class Grid:
             YGREKU(index_2d(self.grid_, GHOSTU[2]), name='YGREKU', letter=GHOSTU[2]))
         self.ghostu.append(
             ZEDU(index_2d(self.grid_, GHOSTU[3]), name='ZEDU', letter=GHOSTU[3]))
-        self.ghostu[0].is_weak = True
 
     def which_ghostu(self, letter):
         return self.ghostu[GHOSTU.index(letter)]
@@ -64,7 +63,8 @@ class Grid:
                 print('fucking pacu ur so bad')
 
     def update(self, direction):
-        collid = self.pacu.update(self.grid_, direction=direction)
+        collid = self.pacu.update(
+            self.grid_, direction=direction, AI=AI_TRIGGER)
         self.handle_collid_for_pacu(collid)
         self.CLEAN_THIS_TRASH_PACU()
         for g in self.ghostu:
