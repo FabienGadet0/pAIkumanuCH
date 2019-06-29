@@ -9,7 +9,7 @@ class Pacu(Trucquibouge):
 
     def update(self, grid, direction="NONE", AI=False):
         if AI:
-            direction = self.brain.think(grid)
+            direction = self.brain.think(grid, self)
         return self.move(get_things_around(self.pos, grid, name=self.name), direction)
 
 # ? return cell content if collid otherwise return ''
@@ -18,10 +18,10 @@ class Pacu(Trucquibouge):
                'DOWN': self.down,
                'RIGHT': self.right,
                'LEFT': self.left}
-        if (direction == 'UP' and (thingsaround[0] in 'CV') or
-            (direction == 'DOWN' and (thingsaround[1] in 'CV')) or
-            (direction == 'RIGHT' and (thingsaround[2] in 'CV')) or
-                (direction == 'LEFT' and (thingsaround[3] in 'CV'))):
+        if (direction == 'UP' and (thingsaround[0] in ' V') or
+            (direction == 'DOWN' and (thingsaround[1] in ' V')) or
+            (direction == 'RIGHT' and (thingsaround[2] in ' V')) or
+                (direction == 'LEFT' and (thingsaround[3] in ' V'))):
             dir[direction]()
             self.set_direction(direction)
             self.set_sprite_pos(self.pos)

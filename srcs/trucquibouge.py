@@ -18,7 +18,6 @@ class Trucquibouge(spritz.Spritz):
         self.letter = letter
         self.direction = "RIGHT"
         super().__init__(self.pos, self.direction, "Pacu")
-        # super().__init__(self.pos, self.direction, self.name)
 
     def die(self):
         self.is_dead = True

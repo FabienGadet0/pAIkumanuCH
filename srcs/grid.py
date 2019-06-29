@@ -24,7 +24,8 @@ class Grid:
         self.grid_ = []
         with open(pathToGrid) as g:
             for i in g.readlines():
-                self.grid_.append(i.split())
+                self.grid_.append(list(i))
+        print(index_2d(self.grid_, '0'))
         self.pacu = Pacu(index_2d(self.grid_, '0'))
         self.ghostu = []
         self.ghostu.append(
@@ -35,6 +36,7 @@ class Grid:
             YGREKU(index_2d(self.grid_, GHOSTU[2]), name='YGREKU', letter=GHOSTU[2]))
         self.ghostu.append(
             ZEDU(index_2d(self.grid_, GHOSTU[3]), name='ZEDU', letter=GHOSTU[3]))
+        print(self.pacu)
 
     def which_ghostu(self, letter):
         return self.ghostu[GHOSTU.index(letter)]

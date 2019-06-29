@@ -31,10 +31,10 @@ class Ghostu(Trucquibouge):
                'DOWN': self.down,
                'RIGHT': self.right,
                'LEFT': self.left}
-        if (direction == 'UP' and (thingsaround[0] in 'CV') or
-            (direction == 'DOWN' and (thingsaround[1] in 'CV')) or
-            (direction == 'RIGHT' and (thingsaround[2] in 'CV')) or
-                (direction == 'LEFT' and (thingsaround[3] in 'CV'))):
+        if (direction == 'UP' and (thingsaround[0] in ' V') or
+            (direction == 'DOWN' and (thingsaround[1] in ' V')) or
+            (direction == 'RIGHT' and (thingsaround[2] in ' V')) or
+                (direction == 'LEFT' and (thingsaround[3] in ' V'))):
             dir[direction]()
             self.set_direction(direction)
             self.set_sprite_pos(self.pos)

@@ -2,8 +2,8 @@ import pygame
 from pygame.locals import *
 
 WINDOW_NAME = "pAIkumanuCH"
-WINDOW_HEIGHT = 500
-WINDOW_WIDTH = 500
+WINDOW_HEIGHT = 850
+WINDOW_WIDTH = 850
 
 
 class Graphics:
@@ -57,17 +57,18 @@ class Graphics:
     def _get_gud_color(self, code):
         if code == "0":
             return (0, 0, 0)
-        elif code == "W":
+        elif code == "#":
             return (66, 78, 244)
         elif code in '12345678':
             return (255, 255, 255)
-        elif code == "C":
+        elif code == " ":
             return (249, 168, 4)
         elif code == "S":
             return (138, 25, 214)
         elif code == "V":
             return (0, 0, 0)
         else:
+            print(code)
             return (255, 0, 255, 0)
 
     def _handle_sprites_from_gridu(self, gridu):
